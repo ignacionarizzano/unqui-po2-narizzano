@@ -1,11 +1,8 @@
 package ar.edu.unq.po2.tpClasesAbsInterfaces;
 
-public abstract class Factura {
+public abstract class Factura implements Cobrable, Agencia{
     
-	protected float montoAPagar;
-
-	public float getMontoAPagar() {
-		return montoAPagar;
-	}
+	public abstract float montoAPagar();
+	public abstract void cobrar();
 	
 }

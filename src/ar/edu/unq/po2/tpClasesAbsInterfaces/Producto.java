@@ -1,27 +1,35 @@
 package ar.edu.unq.po2.tpClasesAbsInterfaces;
 
-public abstract class Producto {
+public abstract class Producto implements Cobrable {
 
 	//private String nombre;
-    protected float price;
-    protected int stock;
+    protected float precio;
+    protected int   stock;
     
-	public Producto(float price, int stock) {
+	public Producto(float precio, int stock) {
 		super();
-		this.price = price;
+		this.precio = precio;
 		this.stock = stock;
 	}
 
-	public float getPrice() {
-		return price;
+	public float getPrecio() {
+		return precio;
 	}
     
 	public int getStock( ) {
 		return stock;
 	}
 	
-	public void decreaseStock() {
+	public void decrementarStock() {
     	this.stock --;
     }
+	
+	public float montoAPagar() {
+		return this.getPrecio();
+	}
+	
+	public void cobrar() {
+		this.stock --;
+	}
 }
 

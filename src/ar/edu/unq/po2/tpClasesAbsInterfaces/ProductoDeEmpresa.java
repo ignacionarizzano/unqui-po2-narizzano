@@ -6,5 +6,4 @@ public class ProductoDeEmpresa extends Producto {
 		super(price, stock);
 		// TODO Auto-generated constructor stub
 	}
-    
 }

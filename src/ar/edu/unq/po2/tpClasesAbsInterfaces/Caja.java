@@ -1,17 +1,17 @@
 package ar.edu.unq.po2.tpClasesAbsInterfaces;
 
-public class Caja implements Agencia{
+public class Caja {
+	
     private float montoAPagar = 0;
     
-    public void registrar(Producto p) {
-    	montoAPagar += p.getPrice();
-    	p.decreaseStock();
+    public void registrar(Cobrable c) {
+    	montoAPagar += c.montoAPagar();
+    	c.cobrar();
     }
+    
     public float informarMonto() {
+    	System.out.println("TOTAL " + this.montoAPagar);
     	return montoAPagar;
     }
-    public void registrarPago(Factura f) {
-    	montoAPagar = f.getMontoAPagar();
-		System.out.println("Pago de " + montoAPagar + " realizado con exito");
-	}
+    
 }

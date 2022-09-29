@@ -15,9 +15,9 @@ class CajaTestCase {
 	@BeforeEach
 	void setUp() throws Exception {
 		cajaMercado = new Caja();
-		taza = new ProductoDeCooperativa(300, 5);
-		fideos = new ProductoDeEmpresa(250, 100);
-	    gas = new FacturaServicio(150, 5);
+		taza        = new ProductoDeCooperativa(300, 5);
+		fideos      = new ProductoDeEmpresa(250, 100);
+	    gas         = new FacturaServicio(150, 5);
 	}
 
 	@Test
@@ -27,9 +27,9 @@ class CajaTestCase {
 
 		cajaMercado.registrar(taza);
 	    
-		System.out.println(taza.getPrice());
+		System.out.println(taza.getPrecio());
 		System.out.println(taza.getStock());
-		assertTrue(cajaMercado.informarMonto() == taza.getPrice());
+		assertTrue(cajaMercado.informarMonto() == taza.getPrecio());
 		assertTrue(taza.getStock() == 4);
 	}
     
@@ -38,16 +38,16 @@ class CajaTestCase {
 		
 	    cajaMercado.registrar(fideos);
 		
-	    assertTrue(cajaMercado.informarMonto() == fideos.getPrice());
+	    assertTrue(cajaMercado.informarMonto() == fideos.getPrecio());
 	    assertTrue(fideos.getStock() == 99);
 	}
 	
 	@Test
 	void testPagarServicio() {
 		
-		cajaMercado.registrarPago(gas);
+		cajaMercado.registrar(gas);
 		
-		assertTrue(cajaMercado.informarMonto() == gas.getMontoAPagar());
+		assertTrue(cajaMercado.informarMonto() == gas.montoAPagar());
 	}
 	
 	

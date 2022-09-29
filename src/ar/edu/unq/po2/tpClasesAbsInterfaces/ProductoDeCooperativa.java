@@ -1,13 +1,12 @@
 package ar.edu.unq.po2.tpClasesAbsInterfaces;
 
 public class ProductoDeCooperativa extends Producto {
-
 	
-	public ProductoDeCooperativa(float price, int stock) {
-		super(price, stock);
+	
+	public ProductoDeCooperativa(float precio, int stock) {
+		super(precio, stock);
 		// TODO Auto-generated constructor stub
-		this.price = price - (price * 10) / 100;
+		this.precio = precio - (precio * 10) / 100;
 	}
     
-	
 }
